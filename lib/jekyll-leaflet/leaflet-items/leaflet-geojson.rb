@@ -16,7 +16,8 @@ module Jekyll
             value = parse_liquid_output_in(@input, context)
             '{id: "' + SecureRandom.hex + '",
               type: "LeafletGeoJSON",
-              value: ' + value + '},'
+              value: ' + value + ',
+              style: "{color:#ff000}"},'
         end
     end
 end
