@@ -8,7 +8,13 @@ module Jekyll
             if input.empty?
                 @input = '{}'
             else
-                @input = input
+	        args=input.split(",",2) # everything after comma is expected to be a style string, add more later ?
+                @input = args[0]
+                if (args.size()>1) 
+                  @stylestr = ",style:"+args[1]
+                else
+                  @stylestr = ""
+                end
             end
         end
 
@@ -16,8 +22,7 @@ module Jekyll
             value = parse_liquid_output_in(@input, context)
             '{id: "' + SecureRandom.hex + '",
               type: "LeafletGeoJSON",
-              value: ' + value + ',
-              style: "{color:#ff000}"},'
+              value: ' + value + @stylestr + '},'
         end
     end
 end

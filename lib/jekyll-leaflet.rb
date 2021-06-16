@@ -1,3 +1,4 @@
+$LOAD_PATH.unshift __dir__
 require "jekyll-leaflet/leaflet-map"
 require "jekyll-leaflet/leaflet-items/leaflet-marker"
 require "jekyll-leaflet/leaflet-items/leaflet-geojson"

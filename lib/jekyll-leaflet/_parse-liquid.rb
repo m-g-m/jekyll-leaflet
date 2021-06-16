@@ -9,5 +9,6 @@ def parse_liquid_output_in(input, context)
         end
         output = output.sub(match, value)
     end
+
     return output
 end
